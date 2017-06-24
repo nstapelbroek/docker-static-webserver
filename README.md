@@ -1,6 +1,6 @@
 # Docker static webserver
 
-A simple alpine based nginx web container that has the ability to insert environment variables. Created to add a bit more configuraiton flexibility to staticly generated front-ends (like webpack builds) without having to re-build your Docker image or use a scripting language.
+A simple alpine based nginx web container that has the ability to insert environment variables. Created to add a bit more configuration flexibility to statically generated front-ends (like webpack builds) without having to re-build your Docker image or use a scripting language.
 
 ## Getting Started
 
