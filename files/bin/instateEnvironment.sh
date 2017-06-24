@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv sh
-grep -o "[[:alpha:]]*container.env.[[:graph:]]*" $1 | while read -r GREPRESULT ; do
+grep -o "container.env.[a-zA-Z0-9_]*" $1 | while read -r GREPRESULT ; do
     ENVNAME=$(echo $GREPRESULT | cut -c15-)
     ENVVALUE=$(printenv $ENVNAME)
     if [ -z "$ENVVALUE" ]; then
