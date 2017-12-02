@@ -6,8 +6,7 @@ script:
 
 after_success:
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-      docker login -u="nstapelbroek" -p="$DOCKERHUB_PASSWORD";
+      docker login -u="nstapelbroekbot" -p="$DOCKERHUB_PASSWORD";
       docker tag nstapelbroek/static-webserver:$TRAVIS_BRANCH docker.io/nstapelbroek/static-webserver:$TRAVIS_BRANCH;
       docker push docker.io/nstapelbroek/static-webserver;
     fi
-
