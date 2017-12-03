@@ -15,12 +15,12 @@ Note that the `./dist` folder is where your static site is placed.
 
 ### Using enviornment variables
 
-When this container bootstraps, a script will find and replace all occurrences of container.env.{variableName} and replace them for their matching values passed in the environment variables of your container. 
+When this container bootstraps, a script will find and replace all occurrences of {container.env.%variableName%} and replace them for their matching values passed in the environment variables of your container.
 
 For instance, a HTML file containing the code:
 ```HTML
 <p>
-    My backend is located at container.env.BACKEND_URL
+    My backend is located at {container.env.BACKEND_URL}
 </p>
 ```
 
