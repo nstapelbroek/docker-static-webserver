@@ -29,7 +29,8 @@ Ran with an environment variable `BACKEND_URL=https://api.someproject.com`, will
 ![result](https://user-images.githubusercontent.com/3368018/27512102-48ae27aa-5936-11e7-824a-92ca12d5334f.png)
 
 Sadly, due to the simple approach of finding & replacing the keywords there are some limitations:
-- Please make sure your environment variables do not contain special characters. Only `a-z`, `A-Z`, `0-9` and `_` are allowed.
+- Please make sure your environment keys do not contain special characters. Only `a-z`, `A-Z`, `0-9` and `_` are allowed.
+- Your environment values cannot contain: `&`, `*`, `[`, `]`,`^`
 - By default, the script only changes files located in `/var/www` on your container. You can change this by adding an additional [initialization task](https://github.com/just-containers/s6-overlay#executing-initialization-andor-finalization-tasks) to s6-overlay.
 - The container does not change files on the fly, so if you can't avoid mounting volumes be carefull.
 

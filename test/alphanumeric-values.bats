@@ -13,7 +13,7 @@ setup () {
 
 @test "Replacing a single alphanumeric variable on a single line" {
     FILE=$BATS_RUN_DIR/files/singleline.txt
-    run /bin/sh $BATS_BINARY_DIR/instateEnvironment.sh $FILE
+    run /bin/bash $BATS_BINARY_DIR/instateEnvironment.sh $FILE
     assert_success "Replacing {container.env.BATS_VARIABLE} with $BATS_VARIABLE in $FILE"
     assert_file_refute_contains $FILE {container.env.BATS_VARIABLE}
     assert_file_contains $FILE $BATS_VARIABLE
@@ -21,7 +21,7 @@ setup () {
 
 @test "Replacing multiple alphanumeric variables on a single line" {
     FILE=$BATS_RUN_DIR/files/singleline-multimatches.txt
-    run /bin/sh $BATS_BINARY_DIR/instateEnvironment.sh $FILE
+    run /bin/bash $BATS_BINARY_DIR/instateEnvironment.sh $FILE
     assert_success
     assert_output_contains "Replacing {container.env.BATS_VARIABLE} with $BATS_VARIABLE in $FILE"
     assert_output_contains "Replacing {container.env.BATS_VARIABLE_SECOND} with $BATS_VARIABLE_SECOND in $FILE"
@@ -33,7 +33,7 @@ setup () {
 
 @test "Replacing a single alphanumeric variable on multiple lines" {
     FILE=$BATS_RUN_DIR/files/multiline.txt
-    run /bin/sh $BATS_BINARY_DIR/instateEnvironment.sh $FILE
+    run /bin/bash $BATS_BINARY_DIR/instateEnvironment.sh $FILE
     assert_success
     assert_output_contains "Replacing {container.env.BATS_VARIABLE} with $BATS_VARIABLE in $FILE"
     assert_file_refute_contains $FILE {container.env.BATS_VARIABLE}
@@ -42,7 +42,7 @@ setup () {
 
 @test "Replacing multiple alphanumeric variables on multiple lines" {
     FILE=$BATS_RUN_DIR/files/multiline-multimatches.txt
-    run /bin/sh $BATS_BINARY_DIR/instateEnvironment.sh $FILE
+    run /bin/bash $BATS_BINARY_DIR/instateEnvironment.sh $FILE
     assert_success
     assert_output_contains "Replacing {container.env.BATS_VARIABLE} with $BATS_VARIABLE in $FILE"
     assert_output_contains "Replacing {container.env.BATS_VARIABLE_SECOND} with $BATS_VARIABLE_SECOND in $FILE"
