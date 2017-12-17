@@ -1,0 +1,13 @@
+{
+    "title": "Some JS application running on client-side",
+    "backends": [
+        {
+            "location": "{container.env.BACKEND_EU_URL}",
+            "priority" : {container.env.BACKEND_EU_PRIORITY}
+        },
+        {
+            "location": {container.env.BACKEND_NA_URL},
+            "priority" : {container.env.BACKEND_NA_PRIORITY}
+        }
+    ]
+}

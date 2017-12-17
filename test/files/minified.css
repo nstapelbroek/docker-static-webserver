@@ -1,0 +1,1 @@
+body{display:flex;flex-direction:column;justify-content:center;background-color:{container.env.BACKGROUND_COLOR}};padding:6em 4em 4em;color:green;}
