@@ -41,7 +41,7 @@ There are a couple of tags available for this image:
 - `1.x.x` referes to an release. These releases are not auto-rebuild (yet) so you'll miss out on any updates or patches. It holds a good purpose if you want to pin to a specific release.
 - `latest` referes to a build with new features or improvements that are potentially BC-breaking.
 
-### Known limitations
+## Known limitations
 
 Sadly, due to the simple approach of finding & replacing the keywords there are some limitations:
 - Please make sure your environment keys do not contain special characters. Only `a-z`, `A-Z`, `0-9` and `_` are recommended.
