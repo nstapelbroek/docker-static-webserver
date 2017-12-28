@@ -7,7 +7,7 @@ A simple alpine based nginx web container that has the ability to insert environ
 This repository is used to generate the images available in the Docker hub. Using this image for your own project is as simple as creating a Dockerfile with the two lines below: 
 
 ```Dockerfile
-FROM nstapelbroek:docker-static-webserver
+FROM nstapelbroek/static-webserver:1.0
 COPY ./dist /var/www
 ``` 
 
