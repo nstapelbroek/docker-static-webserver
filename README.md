@@ -7,7 +7,7 @@ A simple alpine based nginx web container that has the ability to insert environ
 This repository is used to generate the images available in the Docker hub. Using this image for your own project is as simple as creating a Dockerfile with the two lines below: 
 
 ```Dockerfile
-FROM nstapelbroek/static-webserver:1.0
+FROM nstapelbroek/static-webserver:1
 COPY ./dist /var/www
 ``` 
 
@@ -27,6 +27,21 @@ For instance, a HTML file containing the code:
 Ran with an environment variable `BACKEND_URL=https://api.someproject.com`, will result in:
 
 ![result](https://user-images.githubusercontent.com/3368018/27512102-48ae27aa-5936-11e7-824a-92ca12d5334f.png)
+
+### What tag should you use
+
+To prevent [confusion](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) and sudden BC-breaks you should avoid using the `latest` tag when building upon this image (or any image for that matter). I'm using [Semver](https://semver.org/) as a base for versioning schematics. Due to the small functionality of this container I'm considering the following changes as "incompatible API changes": 
+
+- Altered behaviour at clients, for example due to changes in cache-headers
+- Altered behaviour in the find & replace script
+
+There are a couple of tags available for this image:
+
+- `1` referes to its equaly named support branch for preparing new minor or patch releases. This branch will be auto-rebuild every day meaning you'll also get the latest updates from the [upstream nginx image](https://hub.docker.com/_/nginx/). Use this branch whenever you can.
+- `1.x.x` referes to an release. These releases are not auto-rebuild (yet) so you'll miss out on any updates or patches. It holds a good purpose if you want to pin to a specific release.
+- `latest` referes to a build with new features or improvements that are potentially BC-breaking.
+
+### Known limitations
 
 Sadly, due to the simple approach of finding & replacing the keywords there are some limitations:
 - Please make sure your environment keys do not contain special characters. Only `a-z`, `A-Z`, `0-9` and `_` are recommended.
