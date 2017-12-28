@@ -32,14 +32,14 @@ Ran with an environment variable `BACKEND_URL=https://api.someproject.com`, will
 
 To prevent [confusion](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) and sudden BC-breaks you should avoid using the `latest` tag when building upon this image (or any image for that matter). I'm using [Semver](https://semver.org/) as a base for versioning schematics. Due to the small functionality of this container I'm considering the following changes as "incompatible API changes": 
 
-- Altered behaviour at clients, for example due to changes in cache-headers
-- Altered behaviour in the find & replace script
+- Altered behavior at clients, for example due to changes in cache-headers
+- Altered behavior in the find & replace script
 
 There are a couple of tags available for this image:
 
-- `1` referes to its equaly named support branch for preparing new minor or patch releases. This branch will be auto-rebuild every day meaning you'll also get the latest updates from the [upstream nginx image](https://hub.docker.com/_/nginx/). Use this branch whenever you can.
-- `1.x.x` referes to an release. These releases are not auto-rebuild (yet) so you'll miss out on any updates or patches. It holds a good purpose if you want to pin to a specific release.
-- `latest` referes to a build with new features or improvements that are potentially BC-breaking.
+- `1` refers to its equally named support branch for preparing new minor or patch releases. This branch will be auto-rebuild every day meaning you'll also get the latest updates from the [upstream nginx image](https://hub.docker.com/_/nginx/). Use this branch whenever you can.
+- `1.x.x` refers to an release. These releases are not auto-rebuild (yet) so you'll miss out on any updates or patches. It holds a good purpose if you want to pin to a specific release.
+- `latest` refers to a build with new features or improvements that are potentially BC-breaking.
 
 ## Known limitations
 
