@@ -1,4 +1,4 @@
-FROM nginx:1-alpine
+FROM nginx:stable-alpine
 
 RUN apk -U upgrade --no-cache && apk add -U --no-cache curl grep \
     && curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.19.1.1/s6-overlay-amd64.tar.gz \
