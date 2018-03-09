@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <!--
 	Stellar by HTML5 UP
@@ -6,46 +5,58 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Docker static webserver</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style type="text/css">header,pre code,section{display:block}#header p,h1,h2{letter-spacing:-.025em}#main,#main h2{color:#636363}body,code,div,h1,h2,header,p,pre,section{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}p,pre{margin:0 0 2em}body,h1,h2{font-weight:300}body{-webkit-text-size-adjust:none;-ms-overflow-style:scrollbar;background-image:url(http://localhost/assets/css/images/overlay.png),-moz-linear-gradient(45deg,#e37682 15%,#5f4d93 85%);background-image:url(http://localhost/assets/css/images/overlay.png),-webkit-linear-gradient(45deg,#e37682 15%,#5f4d93 85%);background-image:url(http://localhost/assets/css/images/overlay.png),-ms-linear-gradient(45deg,#e37682 15%,#5f4d93 85%);background-image:url(http://localhost/assets/css/images/overlay.png),linear-gradient(45deg,#e37682 15%,#5f4d93 85%);background-color:#935d8c;color:rgba(255,255,255,.65);font-family:"Source Sans Pro",Helvetica,sans-serif;font-size:17pt;line-height:1.65}*,:after,:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}@media screen and (max-width:1680px){body{font-size:14pt}}@media screen and (max-width:1280px){body{font-size:12pt}}@media screen and (max-width:360px){body{font-size:11pt}}h1,h2{line-height:1.5;margin:0 0 .7em;color:#fff}h1{font-size:2.5em;line-height:1.2}h2{font-size:1.5em}@media screen and (max-width:736px){h1{font-size:2em}}code,pre{font-family:"Courier New",monospace;font-size:.9em}code{border-radius:8px;border:1px solid;margin:0 .25em;padding:.25em .65em;background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.35)}pre{-webkit-overflow-scrolling:touch}pre code{line-height:1.75;padding:1em 1.5em;overflow-x:auto}::-webkit-input-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}:-moz-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}::-moz-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}:-ms-input-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}header.major{margin-bottom:3em}header.major h2{font-size:2em}header.major h2:after{display:block;content:'';width:3.25em;height:2px;margin:.7em 0 1em;border-radius:2px;background-color:rgba(255,255,255,.35)}@media screen and (max-width:736px){header.major{margin-bottom:0}header.major h2{font-size:1.5em}}.spotlight{display:-moz-flex;display:-webkit-flex;display:-ms-flex;display:flex;-moz-align-items:center;-webkit-align-items:center;-ms-align-items:center;align-items:center;margin:0 0 2em}.spotlight .content{-moz-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.spotlight .content>:last-child{margin-bottom:0}.spotlight .content header.major{margin:0 0 2em}@media screen and (max-width:980px){.spotlight{-moz-flex-direction:column-reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;text-align:center}.spotlight .content{-moz-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;width:100%}.spotlight .content header.major h2:after{margin-left:auto;margin-right:auto}}#header{padding:5em 5em 1em;text-align:center}#header h1{margin:0 0 .25em}#header p{font-size:1.25em}#header.alt{padding:7em 5em 4em}#header.alt h1{font-size:3.25em}#header.alt>*{-moz-transition:opacity 3s ease;-webkit-transition:opacity 3s ease;-ms-transition:opacity 3s ease;transition:opacity 3s ease;-moz-transition-delay:.5s;-webkit-transition-delay:.5s;-ms-transition-delay:.5s;transition-delay:.5s;opacity:1}@media screen and (max-width:1280px){#header{padding:4em 4em .1em}#header.alt{padding:6em 4em 3em}}@media screen and (max-width:980px){#header{padding:4em 3em .1em}#header.alt{padding:5em 3em 2em}}@media screen and (max-width:736px){#header{padding:3em 2em .1em}#header p{font-size:1em;letter-spacing:0}#header.alt{padding:4em 2em 1em}#header.alt h1{font-size:2.5em}}@media screen and (max-width:480px){body{min-width:320px}#header{padding:3em 1.5em .1em}#header.alt{padding:4em 1.5em 1em}}@media screen and (max-width:360px){#header{padding:2.5em 1em .1em}#header.alt{padding:3.5em 1em .5em}}#main{background-color:#fff;border-radius:.25em}#main code{background:rgba(222,222,222,.25);border-color:#ddd}#main ::-webkit-input-placeholder{color:rgba(99,99,99,.25)!important}#main :-moz-placeholder{color:rgba(99,99,99,.25)!important}#main ::-moz-placeholder{color:rgba(99,99,99,.25)!important}#main :-ms-input-placeholder{color:rgba(99,99,99,.25)!important}#main header.major h2:after{background-color:#ddd;background-image:-moz-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:-webkit-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:-ms-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0)}#main>.main{padding:5em 5em 3em;border-top:solid 1px #ddd}#main>.main:first-child{border-top:0}@media screen and (max-width:1280px){#main>.main{padding:4em 4em 2em}}@media screen and (max-width:980px){#main>.main{padding:4em 3em 2em}}@media screen and (max-width:736px){#main>.main{padding:3em 2em 1em}}#wrapper{width:64em;max-width:calc(100% - 4em);margin:0 auto}@media screen and (max-width:480px){#main>.main{padding:3em 1.5em 1em}#wrapper{max-width:calc(100% - 2em)}}@media screen and (max-width:360px){#main{border-radius:0}#main>.main{padding:2.5em 1em .5em}#wrapper{max-width:100%}}</style>
-	</head>
-	<body>
-			<div id="wrapper">
-                <header id="header" class="alt">
-                    <h1>Whoops, no content yet</h1>
-                    <p>Did you forget to add files to the <code>/var/www</code> directory?</p>
-                </header>
-                <div id="main">
-                    <section id="intro" class="main">
-                        <div class="spotlight">
-                            <div class="content">
-                                <header class="major">
-                                    <h2>Example Dockerfile</h2>
-                                </header>
-                                <p>Here is an example Dockerfile to get you started</p>
-                                <pre><code>
-FROM nstapelbroek:docker-static-webserver
-COPY ./dist /var/www
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section><section id="environment" class="main special">
-								<header class="major">
-									<h2>Using environment variables</h2>
-									<p>When this container bootstraps, a script will find and replace all occurrences of 
-                                        {container.env.%variableName%} and replace them for their matching values passed
-                                        in the environment variables of your container. This is great when trying to
-                                        ship a webpack compiled static page in a Docker image on multiple environments.
-									</p>
-								</header>
-                                <p class="content">
-                                    For example, this container's hostname is {container.env.HOSTNAME}
-                                </p>
-							</section>
+<head>
+    <title>Docker static Webserver</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style type="text/css">header,pre code,section{display:block}#header p,h1,h2{letter-spacing:-.025em}#main,#main h2{color:#636363}body,code,div,h1,h2,header,p,pre,section{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}p,pre{margin:0 0 2em}body,h1,h2{font-weight:300}body{-webkit-text-size-adjust:none;-ms-overflow-style:scrollbar;background-color:#935d8c;color:rgba(255,255,255,.65);font-family:"Source Sans Pro",Helvetica,sans-serif;font-size:17pt;line-height:1.65}*,:after,:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}@media screen and (max-width:1680px){body{font-size:14pt}}@media screen and (max-width:1280px){body{font-size:12pt}}@media screen and (max-width:360px){body{font-size:11pt}}h1,h2{line-height:1.5;margin:0 0 .7em;color:#fff}h1{font-size:2.5em;line-height:1.2}h2{font-size:1.5em}@media screen and (max-width:736px){h1{font-size:2em}}code,pre{font-family:"Courier New",monospace;font-size:.9em}code{border-radius:8px;border:1px solid;margin:0 .25em;padding:.25em .65em;background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.35)}pre{-webkit-overflow-scrolling:touch}pre code{line-height:1.75;padding:1em 1.5em;overflow-x:auto}::-webkit-input-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}:-moz-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}::-moz-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}:-ms-input-placeholder{opacity:1;color:rgba(255,255,255,.5)!important}header.major{margin-bottom:3em}header.major h2{font-size:2em}header.major h2:after{display:block;content:'';width:3.25em;height:2px;margin:.7em 0 1em;border-radius:2px;background-color:rgba(255,255,255,.35)}@media screen and (max-width:736px){header.major{margin-bottom:0}header.major h2{font-size:1.5em}}.spotlight{display:-moz-flex;display:-webkit-flex;display:-ms-flex;display:flex;-moz-align-items:center;-webkit-align-items:center;-ms-align-items:center;align-items:center;margin:0 0 2em}.spotlight .content{-moz-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.spotlight .content>:last-child{margin-bottom:0}.spotlight .content header.major{margin:0 0 2em}@media screen and (max-width:980px){.spotlight{-moz-flex-direction:column-reverse;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;text-align:center}.spotlight .content{-moz-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;width:100%}.spotlight .content header.major h2:after{margin-left:auto;margin-right:auto}}#header{padding:5em 5em 1em;text-align:center}#header h1{margin:0 0 .25em}#header p{font-size:1.25em}#header.alt{padding:7em 5em 4em}#header.alt h1{font-size:3.25em}#header.alt>*{-moz-transition:opacity 3s ease;-webkit-transition:opacity 3s ease;-ms-transition:opacity 3s ease;transition:opacity 3s ease;-moz-transition-delay:.5s;-webkit-transition-delay:.5s;-ms-transition-delay:.5s;transition-delay:.5s;opacity:1}@media screen and (max-width:1280px){#header{padding:4em 4em .1em}#header.alt{padding:6em 4em 3em}}@media screen and (max-width:980px){#header{padding:4em 3em .1em}#header.alt{padding:5em 3em 2em}}@media screen and (max-width:736px){#header{padding:3em 2em .1em}#header p{font-size:1em;letter-spacing:0}#header.alt{padding:4em 2em 1em}#header.alt h1{font-size:2.5em}}@media screen and (max-width:480px){body{min-width:320px}#header{padding:3em 1.5em .1em}#header.alt{padding:4em 1.5em 1em}}@media screen and (max-width:360px){#header{padding:2.5em 1em .1em}#header.alt{padding:3.5em 1em .5em}}#main{background-color:#fff;border-radius:.25em}#main code{background:rgba(222,222,222,.25);border-color:#ddd}#main ::-webkit-input-placeholder{color:rgba(99,99,99,.25)!important}#main :-moz-placeholder{color:rgba(99,99,99,.25)!important}#main ::-moz-placeholder{color:rgba(99,99,99,.25)!important}#main :-ms-input-placeholder{color:rgba(99,99,99,.25)!important}#main header.major h2:after{background-color:#ddd;background-image:-moz-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:-webkit-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:-ms-linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0);background-image:linear-gradient(90deg,#efa8b0,#a89cc8,#8cc9f0)}#main>.main{padding:5em 5em 3em;border-top:solid 1px #ddd}#main>.main:first-child{border-top:0}@media screen and (max-width:1280px){#main>.main{padding:4em 4em 2em}}@media screen and (max-width:980px){#main>.main{padding:4em 3em 2em}}@media screen and (max-width:736px){#main>.main{padding:3em 2em 1em}}#wrapper{width:64em;max-width:calc(100% - 4em);margin:0 auto}@media screen and (max-width:480px){#main>.main{padding:3em 1.5em 1em}#wrapper{max-width:calc(100% - 2em)}}@media screen and (max-width:360px){#main{border-radius:0}#main>.main{padding:2.5em 1em .5em}#wrapper{max-width:100%}}</style>
+    </head>
+    <body>
+    <div id="wrapper">
+        <header id="header" class="alt">
+            <h1>Whoops, no content yet</h1>
+            <p>Did you forget to add files to the <code>/var/www</code> directory?</p>
+        </header>
+        <div id="main">
+            <section id="intro" class="main">
+                <div class="spotlight">
+                    <div class="content">
+                        <header class="major">
+                            <h2>Example Dockerfile</h2>
+                        </header>
+                        <p>Here is an example Dockerfile to get you started</p>
+                    </div>
                 </div>
-			</div>
-	</body>
+<pre><code>
+FROM nstapelbroek/static-webserver:1
+COPY ./dist /var/www
+
+</code></pre>
+        </section>
+            <section id="environment" class="main special">
+                <header class="major">
+                    <h2>Using environment variables</h2>
+                    <p>When this container bootstraps, a script will find and replace all occurrences of
+                        {container.env.%variableName%} and replace them for their matching values passed
+                        in the environment variables of your container. This is great when trying to
+                        ship a webpack compiled static page in a Docker image on multiple environments.
+                    </p>
+                </header>
+                <p class="content">
+                    As an example: a container is almost certain to receive a hostname when running it. The hostname of
+                    this container is <code>{container.env.HOSTNAME}</code>. Try running another instance of this container and notice
+                    how the hostname changes.
+                </p>
+            </section>
+            <section id="cta" class="main special">
+                <header class="major">
+                    <h2>Read more</h2>
+                    <p>For more documentation, known issues or updates
+                        <a href="https://github.com/nstapelbroek/docker-static-webserver" class="button special">view the project on github.com</a>.
+                    </p>
+                </header>
+            </section>
+        </div>
+    </div>
+    </body>
 </html>
