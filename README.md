@@ -1,3 +1,8 @@
+[![Travis](https://api.travis-ci.org/nstapelbroek/docker-static-webserver.svg?style=flat-square)](https://travis-ci.org/nstapelbroek/docker-static-webserver)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nstapelbroek/static-webserver.svg?style=flat-square)](https://hub.docker.com/r/nstapelbroek/static-webserver/tags/)
+[![](https://images.microbadger.com/badges/image/nstapelbroek/static-webserver.svg?style=flat-square)](https://microbadger.com/images/nstapelbroek/static-webserver)
+[![license](https://img.shields.io/github/license/nstapelbroek/docker-static-webserver.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
 # Docker static webserver
 
 A simple alpine based nginx web container that has the ability to insert environment variables. Created to add a bit more configuration flexibility to statically generated front-ends (like webpack builds) without having to re-build your Docker image or use a scripting language.
