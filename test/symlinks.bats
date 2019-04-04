@@ -31,7 +31,5 @@ setup () {
 @test "Replacing a dead_symlink" {
     FILE=$BATS_RUN_DIR/files/dead_symlink
     run /bin/sh $BATS_BINARY_DIR/instateEnvironment.sh $FILE
-    assert_success "Replacing {container.env.BATS_VARIABLE} with $BATS_VARIABLE in $FILE"
-    assert_file_refute_contains $FILE {container.env.BATS_VARIABLE}
-    assert_file_contains $FILE $BATS_VARIABLE
+    assert_failure
 }
