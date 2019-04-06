@@ -5,6 +5,11 @@ if [ -z "$1" ]; then
     exit 1;
 fi
 
+if [ ! -f "$1" ]; then
+    (>&2 echo "$1 No such file or directory")
+    exit 2;
+fi
+
 grep -o "{container.env.[a-zA-Z0-9_]\+}" $1 | while read -r GREPRESULT ; do
     # Remove the {container.env.} from the grep result
     ENVNAME=$(echo $GREPRESULT | cut -c16- | rev | cut -c2- | rev)
