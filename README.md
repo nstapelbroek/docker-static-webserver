@@ -12,7 +12,7 @@ A simple alpine based nginx web container that has the ability to insert environ
 This repository is used to generate the images available in the Docker hub. Using this image for your own project is as simple as creating a Dockerfile with the two lines below: 
 
 ```Dockerfile
-FROM nstapelbroek/static-webserver:2
+FROM nstapelbroek/static-webserver:3
 COPY ./dist /var/www
 ``` 
 
@@ -43,7 +43,7 @@ To prevent [confusion](https://medium.com/@mccode/the-misunderstood-docker-tag-l
 
 There are a couple of tags [available in the registry](https://hub.docker.com/r/nstapelbroek/static-webserver/tags/) for this image:
 
-- `2` refers to its equally named support branch for preparing new minor or patch releases. This branch will be auto-rebuild every day meaning you'll also get the latest updates from the [upstream nginx image](https://hub.docker.com/_/nginx/). Use this branch whenever you can.
+- `3` refers to its equally named support branch for preparing new minor or patch releases. This branch will be auto-rebuild every day meaning you'll also get the latest updates from the [upstream nginx image](https://hub.docker.com/_/nginx/). Use this branch whenever you can.
 - `x.x.x` refers to an release. These releases are not auto-rebuild (yet) so you'll miss out on any updates or patches. It holds a good purpose if you want to pin to a specific release.
 - `latest` refers to a build with new features or improvements that are potentially BC-breaking.
 
