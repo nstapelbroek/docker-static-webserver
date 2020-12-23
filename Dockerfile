@@ -1,14 +1,14 @@
 FROM nginx:stable-alpine
 
-RUN apk -U upgrade --no-cache && apk add -U --no-cache curl grep \
-    && curl -L -s https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-amd64.tar.gz \
-    | tar xvzf - -C / \
-    && rm -rf /var/www/localhost
+# System dependencies
+RUN apk add -U --no-cache curl grep && rm -rf /var/www/localhost
+
+# Dumb init s6
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.8.0/s6-overlay-amd64.tar.gz /tmp/
+RUN gunzip -c /tmp/s6-overlay-amd64.tar.gz | tar -xf - -C /
+ENTRYPOINT ["/init"]
 
 COPY files/ /
 
-ENTRYPOINT ["/init"]
-
-EXPOSE 80
-
-HEALTHCHECK --interval=5s --timeout=5s CMD curl -f http://127.0.0.1/ || exit 1
+# Quality of life
+HEALTHCHECK --interval=5s --timeout=2s CMD curl -f http://127.0.0.1/ || exit 1
