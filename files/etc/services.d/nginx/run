@@ -1,2 +1,2 @@
-#!/usr/bin/with-contenv sh
-exec nginx
+#!/usr/bin/execlineb -P
+nginx
