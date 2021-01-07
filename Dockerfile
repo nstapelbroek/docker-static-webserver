@@ -4,7 +4,7 @@ FROM nginx:stable-alpine
 RUN apk add -U --no-cache curl grep && rm -rf /var/www/localhost
 
 # Dumb init s6
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.8.0/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v2.1.0.1/s6-overlay-amd64.tar.gz /tmp/
 RUN gunzip -c /tmp/s6-overlay-amd64.tar.gz | tar -xf - -C /
 ENTRYPOINT ["/init"]
 
