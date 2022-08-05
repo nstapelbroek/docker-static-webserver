@@ -28,7 +28,7 @@
                     </div>
                 </div>
 <pre><code>
-FROM nstapelbroek/static-webserver:4
+FROM nstapelbroek/static-webserver:5
 COPY ./dist /var/www
 
 </code></pre>
@@ -37,14 +37,14 @@ COPY ./dist /var/www
                 <header class="major">
                     <h2>Using environment variables</h2>
                     <p>When this container bootstraps, a script will find and replace all occurrences of
-                        {container.env.%variableName%} and replace them for their matching values passed
+                        &dollar;&lcub;VARIABLE_NAME&rcub; and replace them for their matching values passed
                         in the environment variables of your container. This is great when trying to
                         ship a webpack compiled static page in a Docker image on multiple environments.
                     </p>
                 </header>
                 <p class="content">
                     As an example: a container is almost certain to receive a hostname when running it. The hostname of
-                    this container is <code>{container.env.HOSTNAME}</code>. Try running another instance of this container and notice
+                    this container is <code>${HOSTNAME}</code>. Try running another instance of this container and notice
                     how the hostname changes.
                 </p>
             </section>

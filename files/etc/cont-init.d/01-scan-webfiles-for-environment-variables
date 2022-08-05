@@ -1,2 +1,0 @@
-#!/usr/bin/with-contenv sh
-find -L /var/www -type f -exec /bin/instateEnvironment.sh {} \;
