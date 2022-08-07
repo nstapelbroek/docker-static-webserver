@@ -36,3 +36,8 @@ file:
     filetype: file
     contains:
     - /<code>([a-zA-Z0-9]+)</code>/
+
+command:
+  configcheck:
+    exit-status: 0
+    exec: "nginx -t"
