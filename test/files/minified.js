@@ -1,1 +1,0 @@
-document.addEventListener( 'DOMContentLoaded', function( event ) {console.log("loaded with envrionment var " + {container.env.SOMEVAR});});

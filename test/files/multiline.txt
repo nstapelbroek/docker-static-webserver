@@ -1,3 +1,0 @@
-Lorem ipsum dolor sit amet, {container.env.BATS_VARIABLE} consectetur adipiscing elit.
-
-Lorem ipsum {container.env.BATS_VARIABLE} dolor sit amet, consectetur adipiscing elit.
