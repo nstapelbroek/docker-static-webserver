@@ -14,6 +14,7 @@
 ### Fixed
 
 - Typo in license file
+- Healthchecks no longer show up in the accesslogs
 
 ### Changed
 
