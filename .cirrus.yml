@@ -5,7 +5,7 @@ docker_builder:
     - docker buildx use multibuilder
     - docker buildx inspect --bootstrap
   install_script: curl -fsSL https://goss.rocks/install | sh
-  build_script: docker buildx build --load --pull --platform linux/amd64 --tag testing
+  build_script: docker buildx build --load --pull --platform linux/amd64 --tag testing .
   test_script: dgoss run testing
 
 docker_builder:
