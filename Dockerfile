@@ -1,4 +1,4 @@
-FROM nginx:stable
+ FROM --platform=$BUILDPLATFORM nginx:stable
 
 COPY files/ /
 
