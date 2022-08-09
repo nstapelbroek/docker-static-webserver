@@ -9,6 +9,7 @@
 - Docker multiarch builds
 - A changelog to keep track of upgrading
 - Goss test config for serverspec like testing
+- CI and weekly image building with cirrus-ci
 
 ### Fixed
 
