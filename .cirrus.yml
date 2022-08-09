@@ -1,4 +1,15 @@
 docker_builder:
+  only_if: $CIRRUS_PR != ''
+  setup_script:
+    - docker buildx create --name multibuilder
+    - docker buildx use multibuilder
+    - docker buildx inspect --bootstrap
+  install_script: curl -fsSL https://goss.rocks/install | sh
+  build_script: docker buildx build --load --pull --platform linux/amd64 --tag testing
+  test_script: dgoss run testing
+
+docker_builder:
+  only_if: $CIRRUS_PR == ''
   setup_script:
     - docker buildx create --name multibuilder
     - docker buildx use multibuilder
@@ -7,4 +18,4 @@ docker_builder:
     DOCKER_USERNAME: ENCRYPTED[1bb0b5d80c8141d2308c575b6d56dbe02cc55b6d38d26b4dbbe2e2560bc58087d23fde11f2fa1ca8515de021fabffcc7]
     DOCKER_PASSWORD: ENCRYPTED[a3b46891e4e96500f1cc3fb81bb672e0113696057a3da41a7be0389a7459928befa74cf2055cd485c1eff1340f850b8c]
   login_script: printenv DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
-  build_script: docker buildx build --platform linux/amd64,linux/arm64 --tag nstapelbroek/static-webserver:$CIRRUS_BRANCH --build-arg VCS_REF=$CIRRUS_CHANGE_IN_REPO .
+  build_script: docker buildx build --push --platform linux/amd64,linux/arm64 --tag nstapelbroek/static-webserver:$CIRRUS_BRANCH --build-arg VCS_REF=$CIRRUS_CHANGE_IN_REPO .
