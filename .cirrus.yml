@@ -4,7 +4,7 @@ docker_builder:
     - docker buildx use multibuilder
     - docker buildx inspect --bootstrap
   env:
-    DOCKER_USERNAME: ENCRYPTED[60dbb7844e25362a784b72bce0581cb62c1878facb1ce6c79af0c5b23ddff049d90fc3237b886e9fb7ccbcf5ac973464]
-    DOCKER_PASSWORD: ENCRYPTED[8966b3342aaf340de1ae0994ac8a088b32656666072e667b87e7c430667438b7c18c8b30d70b0885ad743a860b182938]
+    DOCKER_USERNAME: ENCRYPTED[1bb0b5d80c8141d2308c575b6d56dbe02cc55b6d38d26b4dbbe2e2560bc58087d23fde11f2fa1ca8515de021fabffcc7]
+    DOCKER_PASSWORD: ENCRYPTED[a3b46891e4e96500f1cc3fb81bb672e0113696057a3da41a7be0389a7459928befa74cf2055cd485c1eff1340f850b8c]
   login_script: printenv DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
   build_script: docker buildx build --platform linux/amd64,linux/arm64 --tag nstapelbroek/static-webserver:$CIRRUS_BRANCH --build-arg VCS_REF=$CIRRUS_CHANGE_IN_REPO .
