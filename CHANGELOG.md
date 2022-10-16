@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## [4.0.0](https://github.com/nstapelbroek/docker-static-webserver/tree/4.0.0) (2022-10-16)
 
-[Full Changelog](https://github.com/nstapelbroek/docker-static-webserver/compare/3.0.0...latest)
+[Full Changelog](https://github.com/nstapelbroek/docker-static-webserver/compare/3.0.0...4.0.0)
 
 ### Added 
 
