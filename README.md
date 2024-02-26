@@ -3,7 +3,7 @@
 # Docker static webserver
 
 A simple nginx docker image that has the ability to insert environment variables. Created so I could re-use an image between prod and staging environments for my frontend builds.
-It replaces environment variables on container startup so you don´t have to rebuild your Docker image or use a server-side language to change some settings.
+It replaces environment variables on container startup, so you don´t have to rebuild your Docker image or use a server-side language to change some settings.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ COPY ./your-static-content /var/www
 A more modern example where you build your frontend project and ship it:
 
 ```Dockerfile
-FROM node:18 as build
+FROM node:21 as build
 WORKDIR /opt/project
 
 COPY package.json package-lock.json /opt/project/
@@ -62,8 +62,9 @@ You should use the latest available tag in [at in the registry](https://hub.dock
 
 Due to the simple approach of finding & replacing the keywords there are some limitations:
 - Please make sure your environment keys do not contain special characters. Only `a-z`, `A-Z`, `0-9` and `_` are recommended.
-- By default, the script only changes files located in `/var/www`. You can change this by setting the `NGINX_ENVSUBST_WWW_DIR` environment variable. 
-- The project is not meant as a development environment. Don´t mount your code in here as it will only change envioronment variables on the first starutp.
+- By default, the script only changes files located in `/var/www`. You can change this by setting the `NGINX_ENVSUBST_WWW_DIR` environment variable.
+- Using es6 template literals can cause issues. You can fine-tune the replacement by configuring a filter with the `NGINX_ENVSUBST_FILTER` environment variable. This should allow you to set a prefix like `CONFIG_`.
+- The project is not meant as a development environment. Don´t mount your code in here as it will only change environment variables on the first startup.
 
 ## License
 

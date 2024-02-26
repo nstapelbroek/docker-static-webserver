@@ -38,14 +38,20 @@ COPY ./dist /var/www
                     <h2>Using environment variables</h2>
                     <p>When this container bootstraps, a script will find and replace all occurrences of
                         &dollar;&lcub;VARIABLE_NAME&rcub; and replace them for their matching values passed
-                        in the environment variables of your container. This is great when trying to
-                        ship a webpack compiled static page in a Docker image on multiple environments.
+                        in the environment variables of your container. This is great for shipping
+                        some bundled static code that only needs a small config change between environments.
                     </p>
                 </header>
-                <p class="content">
-                    As an example: a container is almost certain to receive a hostname when running it. The hostname of
-                    this container is <code>${HOSTNAME}</code>. Try running another instance of this container and notice
-                    how the hostname changes.
+                <p>
+                    As an example: a container recieves a hostname when it starts. The hostname of this container is
+                    <code>${HOSTNAME}</code> the nginx version is <code>${NGINX_VERSION}</code>.
+                    Try running another instance of this container and notice how the hostname changes.
+                </p>
+                <p>
+                    You can also filter the variables the startup script is replacing. This can prevent errors when your
+                    javascript contains es6 template literals. To prevent variables from being replaced you should
+                    set the `NGINX_ENVSUBST_FILTER` environment variable in your container. For example:
+                    `NGINX_ENVSUBST_FILTER=CONFIG_` only replaces variables that start with `CONFIG_`.
                 </p>
             </section>
             <section id="cta" class="main special">
